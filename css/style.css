@@ -1,5 +1,13 @@
 /* To compile : sass --watch scss/style.scss css/style.css */
 /* Imports */
+/* To use : @extend %placeholders-name */
+.resultats, .form-quizz, body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Start SCSS*/
 *, ::before, ::after {
   box-sizing: border-box;
@@ -9,7 +17,51 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #4abc;
+  background-color: #f0f0f0;
 }
 
-/*# sourceMappingURL=style.css.map */
+h1 {
+  font-family: Russo One, Arial, Helvetica, sans-serif;
+  padding: 2%;
+}
+
+.container-global {
+  width: 35%;
+}
+
+.form-quizz button {
+  text-align: center;
+  width: 200px;
+  height: 75px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.form-quizz button:hover {
+  background-color: #81B4DE;
+}
+
+.question-block {
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+  width: 600px;
+  filter: drop-shadow(0 0 0.4rem grey);
+}
+.question-block h3 {
+  font-size: 20px;
+  padding: 10px;
+}
+.question-block div {
+  padding: 5px 10px;
+}
+
+.resultats {
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+  width: 600px;
+  height: 75px;
+  margin: 0 auto;
+  margin: 40px;
+  filter: drop-shadow(0 0 0.4rem grey);
+}/*# sourceMappingURL=style.css.map */
