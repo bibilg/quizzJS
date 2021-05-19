@@ -7,8 +7,9 @@
     transform: translate(-50%,-50%);
 }
 
-%center-flex{
+%center-flex-column{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
