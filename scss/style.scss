@@ -15,4 +15,61 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    @extend %center-flex-column;
+    background-color: $background-color;
+}
+
+h1{
+    font-family: Russo One, Arial, Helvetica, sans-serif;
+    padding: 2%;
+}
+
+.container-global{
+    width : 35%;
+}
+
+.form-quizz{
+    @extend %center-flex-column;
+
+    button{
+        text-align: center;
+        width : 200px;
+        height: 75px;
+        border-radius: 10px;
+        margin: 10px;
+
+        &:hover{
+            background-color: $background-button;
+        }
+    }
+}
+
+
+.question-block{
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+    width: 600px;
+    filter: drop-shadow(0 0 0.4rem grey);
+    
+    h3{
+        font-size: 20px;
+        padding : 10px;
+    }
+
+    div{
+        padding : 5px 10px;
+    }
+}
+
+.resultats{
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+    width: 600px;
+    height: 75px;
+    margin: 0 auto;
+    @extend %center-flex-column;
+    margin: 40px;
+    filter: drop-shadow(0 0 0.4rem grey);
 }
