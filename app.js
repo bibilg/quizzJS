@@ -1,5 +1,6 @@
 const form = document.querySelector('.form-quizz');
 let tableauResultats = [];
+let goodResponses = ['c','a','b','a','c'];
 
 form.addEventListener('submit', e => {
 
@@ -10,10 +11,8 @@ form.addEventListener('submit', e => {
         tableauResultats.push(document.querySelector(`.question-block input[name="q${i}"]:checked`).value);
     }
 
-    console.log(tableauResultats);
-
-    //Récupérer les bonnes réponses 
     //Compter le nombre de bonne réponses, afficher en fonction du nombre de bonne réponses
+    displayResults(tableauResultats);
 
     //Si bonne réponse, passer style au vert
     //Si mauvaise réponse, ajouter classe echec et fond en rouge
@@ -24,13 +23,13 @@ form.addEventListener('submit', e => {
 
 });
 
-    
-//Une fois que c'est de nouveau clique, background en blanc 
+function displayResults(tableauResultats){
 
+    // Compter le nombre de bonnes réponses en faisant tableau--> filter --> .length
 
-
-function results(tableauResultats){
-
-
+    //switch case en fonction du nombre de résultats et innerText sur les bonnes classes
 
 }
+
+    
+//Une fois que c'est de nouveau clique, background en blanc 
