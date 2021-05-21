@@ -4,6 +4,7 @@ let goodResponses = ['c','a','b','a','c'];
 const help = document.querySelector('.aide');
 const note = document.querySelector('.note');
 const resultTitle = document.querySelector('.resultats h2');
+const questions = document.querySelectorAll('.question-block');
 
 form.addEventListener('submit', e => {
 
@@ -14,17 +15,47 @@ form.addEventListener('submit', e => {
         tableauResultats.push(document.querySelector(`.question-block input[name="q${i}"]:checked`).value);
     }
 
-    //Compter le nombre de bonne réponses, afficher en fonction du nombre de bonne réponses
     displayResults(tableauResultats);
 
-    //Si bonne réponse, passer style au vert
-    //Si mauvaise réponse, ajouter classe echec et fond en rouge
-
-    //Au bout d'un moment, enlever la classe .animation
+    editQuestionsColors(tableauResultats);
 
     tableauResultats=[];
 
 });
+
+
+questions.forEach( question => {
+
+    question.addEventListener('click' , () => {
+        question.style.background = "white";
+    })
+
+})
+
+function editQuestionsColors(tableauResultats){
+
+    for(let i=0 ; i<5 ; i++){
+
+        if( tableauResultats[i] === goodResponses[i]){
+
+            questions[i].style.background = "#6CDB7A";
+
+        }else{
+
+            questions[i].style.background = "#F2251D";
+            questions[i].classList.add("echec");
+
+        }
+
+    }
+
+    // Delete classe echec after 0.4s (animation during 0.3s)
+    setTimeout(function(){
+        questions.forEach( question => {
+            question.classList.remove("echec");
+        })
+    }, 400);
+}
 
 function displayResults(tableauResultats){
 
@@ -77,5 +108,4 @@ function displayResults(tableauResultats){
     }
 }
 
-    
-//Une fois que c'est de nouveau clique, background en blanc 
+
